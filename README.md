@@ -49,7 +49,7 @@ npm install
 
 Example in `mongoschema.js`:
 ```js
-mongoose.connect("mongodb://localhost:27017/blogApp");
+mongoose.connect("mongodb://localhost:27017/comp");
 ```
 
 Replace with your own MongoDB URI if needed (local or Atlas).
@@ -94,7 +94,4 @@ express-blog-app-/
 - 🌐 [GitHub Profile](https://github.com/Omarosman924)
 
 ---
-
-## 📜 License
-
-This project is open source and free to use for learning and development purposes.
+.
