@@ -78,18 +78,4 @@ GitHub: [@Omarosman924](https://github.com/Omarosman924)
 
 ---
 
-## 🐛 Issues
 
-Feel free to open issues or pull requests.
-
----
-
-## 📸 Screenshot (Optional)
-
-> *(You can add a screenshot of your app UI here)*
-
----
-
-## 📃 License
-
-MIT
