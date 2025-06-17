@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav>
+        <a href="/">Home</a> |
+        <a href="/about">About Us</a> |
+        <a href="/contact">Contact Us</a>
+    </nav>
+
+    <!-- Auth Buttons -->
+    <div style="margin: 10px 0;">
+        <% if (session && session.userId) { %>
+            <a href="/logout" class="btn" style="color: red;">🚪 Logout</a>
+            <a href="/c" class="btn">➕ Compose</a>
+        <% } else { %>
+            <a href="/login" class="btn">🔐 Login</a>
+        <% } %>
