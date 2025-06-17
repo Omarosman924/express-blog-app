@@ -13,6 +13,15 @@
         <a href="/contact">Contact Us</a>
     </nav>
 
+        <!-- Page content -->
+    <h1><%= title %></h1>
+    <p><%= sampleText %></p>
+    <% data.forEach(function(item) { %>
+        <h1><%= item.title %></h1>
+        <p><%= item.short %> <a href="/post/<%= item._id %>">Read more</a>   <a href="/delete/<%= item._id %>">Delete</a>     <a href="/update/<%= item._id %>">update</a></p>
+
+    <% }); %>
+
     <!-- Auth Buttons -->
     <div style="margin: 10px 0;">
         <% if (session && session.userId) { %>
