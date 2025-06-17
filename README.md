@@ -1,97 +1,95 @@
-# 📝 Express Blog App
+# 📝 Express Blog App (Dockerized)
 
-A simple blog application built with **Node.js**, **Express**, and **MongoDB**, allowing users to register, log in, and create/manage blog posts with ease.
+A simple blog application built using **Node.js**, **Express**, **MongoDB**, and **EJS** – now containerized with **Docker** & **Docker Compose**.
 
 ---
 
 ## 🚀 Features
 
-- 🧾 User registration and login system  
-- 🔐 Secure password hashing with `bcrypt`  
-- ✍️ Create, edit, delete, and view blog posts  
-- 💾 MongoDB database for users and posts  
-- 🖥️ Dynamic pages rendered with EJS templates  
-- 🔐 Session management using `express-session`
+- ✍️ Create, edit, and delete blog posts
+- 👥 User registration and login with hashed passwords (bcrypt)
+- 🧠 Session-based authentication using `express-session`
+- 📄 Templating with EJS
+- 🐳 Docker & Docker Compose support for easy setup
+- 📦 MongoDB database containerized
+- ✅ Environment variables support via `ENV` in Docker
 
 ---
 
 ## 🛠️ Tech Stack
 
-| Technology          | Purpose                            |
-|---------------------|-------------------------------------|
-| Node.js + Express   | Backend server and routing          |
-| MongoDB + Mongoose  | Database and schema modeling        |
-| bcrypt              | Password encryption                 |
-| express-session     | Session management                  |
-| EJS                 | Templating engine                   |
-| Bootstrap (optional)| UI styling                          |
+- Node.js + Express
+- MongoDB (inside Docker container)
+- EJS Templating
+- Docker & Docker Compose
+- bcrypt for password hashing
 
 ---
 
-## ⚙️ Setup Instructions
+## ⚙️ Environment Variables
 
-### 1. Clone the Repository
+Make sure to define the following environment variables in your `Dockerfile` or `.env` (if using dotenv):
+
+```env
+PORT=3000
+SESSION_SECRET=yourSecretKey
+MONGODB_URI=mongodb://mongo:27017/comp
+```
+
+---
+
+## 🐳 Docker Compose Setup
 
 ```bash
-git clone https://github.com/Omarosman924/express-blog-app-.git
+# Clone the repo
+git clone git@github.com:Omarosman924/express-blog-app-.git
 cd express-blog-app-
+
+# Build and start containers
+docker compose up --build
 ```
 
-### 2. Install Dependencies
-
-```bash
-npm install
-```
-
-### 3. Configure MongoDB Connection
-
-> 🔧 You **must update the MongoDB connection URI** in `mongoschema.js` or use environment variables.
-
-Example in `mongoschema.js`:
-```js
-mongoose.connect("mongodb://localhost:27017/comp");
-```
-
-Replace with your own MongoDB URI if needed (local or Atlas).
-
-### 4. Run the App
-
-```bash
-node app.js
-# or with nodemon
-nodemon app.js
-```
-
-Then open your browser and visit:
-
-```
-http://localhost:3000
-```
+This runs:
+- `app` on port `3000`
+- `mongo` on port `27017` with volume persistence
 
 ---
 
-## 📁 Project Structure
+## 📁 Folder Structure
 
 ```
 express-blog-app-/
-├── app.js
-├── mongoschema.js
-├── views/
-│   ├── index.ejs
-│   ├── login.ejs
-│   ├── register.ejs
-│   └── ...
-├── public/
-│   └── css/
+├── views/           # EJS templates
+├── public/          # Static files (CSS, JS)
+├── mongoschema.js   # MongoDB schemas
+├── app.js           # Main Express app
+├── Dockerfile       # App container
+├── docker-compose.yml
 ├── package.json
+└── README.md
 ```
 
 ---
 
-## 👤 Developer
+## ✅ Author
 
-- **Omar Osman**
-- 🌐 [GitHub Profile](https://github.com/Omarosman924)
+**Omar Osman**  
+GitHub: [@Omarosman924](https://github.com/Omarosman924)
 
 ---
-.
+
+## 🐛 Issues
+
+Feel free to open issues or pull requests.
+
+---
+
+## 📸 Screenshot (Optional)
+
+> *(You can add a screenshot of your app UI here)*
+
+---
+
+## 📃 License
+
+MIT
